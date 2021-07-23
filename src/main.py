@@ -52,8 +52,8 @@ def methods_people():
         query_people = list(map(lambda x: x.serialize(), query_people))
         print(query_people)
         response_body = {
-            "msg": "Hello, this is your GET /planet response ",
-            "planet": query_people
+            "msg": "Hello, this is your GET /people response ",
+            "people": query_people
         }
         return jsonify(response_body), 200
 
