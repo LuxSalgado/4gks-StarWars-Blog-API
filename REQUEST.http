@@ -1,0 +1,72 @@
+@host=https://3000-tan-yak-rfgqtp99.ws-us15.gitpod.io
+
+### Me regresa todos los personajes
+GET {{host}}/character
+Content-Type: application/json
+
+### Me regresa un personaje en especifico
+GET {{host}}/character/1
+Content-Type: application/json
+
+############################################################################################################
+
+### Me regresa todos los planetas
+GET {{host}}/planet
+Content-Type: application/json
+
+### Me regresa un planeta en especifico
+GET {{host}}/planet/1
+Content-Type: application/json
+
+############################################################################################################
+
+### Me regresa todos los usuarios
+GET {{host}}/user
+Content-Type: application/json
+
+### Me regresa todos los favoritos del usuario
+GET {{host}}/user/favorites
+Content-Type: application/json
+
+############################################################################################################
+
+### Agregar un planeta a favoritos
+POST {{host}}/favorite/planet/1
+Content-Type: application/json
+
+{
+    "user_id": 1
+}
+
+### Agregar un personaje a favoritos
+POST {{host}}/favorite/character/1
+Content-Type: application/json
+
+{
+    "user_id": 1
+}
+
+############################################################################################################
+
+### Eliminar un planeta favorito
+DELETE {{host}}/favorite/planet/1
+Content-Type: application/json
+
+### Eliminar un personaje favorito
+DELETE {{host}}/favorite/character/1
+Content-Type: application/json
+
+############################################################################################################
+
+
+### UPDATE USER
+PUT {{host}}/user/1
+Content-Type: application/json
+
+{
+    "rut":"vlevle",
+    "name":"Laja",
+    "contact":"vlevle",
+    "register":"vlevle",
+    "perfil":"super mega administrador"
+}
