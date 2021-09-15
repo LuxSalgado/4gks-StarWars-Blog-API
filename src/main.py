@@ -32,24 +32,16 @@ def sitemap():
 
 #########################################################################  
 
-@app.route('/character', methods=['GET', 'POST'])
-def methods_character():
-    if request.method == 'POST':
-        body = request.get_json()
-        print(body)
-        response_body = {
-            "msg": "Hello, this is your POST /character response"
-        }
-        return jsonify(response_body), 200
-    else:
-        query_character = Character.query.all()
-        query_character = list(map(lambda x: x.serialize(), query_character))
-        print(query_character)
-        response_body = {
-            "msg": "Hello, this is your GET /character response ",
-            "character": query_character
-        }
-        return jsonify(response_body), 200
+@app.route('/character', methods=['GET'])
+def get_character():
+    query_character = Character.query.all()
+    query_character = list(map(lambda x: x.serialize(), query_character))
+    print(query_character)
+    response_body = {
+        "msg": "Hello, this is your GET /character response ",
+        "character": query_character
+    }
+    return jsonify(response_body), 200
 
 @app.route('/character/<int:id>', methods=['GET'])
 def get_character_unico(id = None):
